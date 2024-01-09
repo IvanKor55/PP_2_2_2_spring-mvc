@@ -20,7 +20,7 @@ public class Main {
     }
     public static List<String> listCarsInString (Integer count) {
         List<String> stringList = new ArrayList<>();
-        if (count == null) {
+        if (count == null || count <= 0) {
             stringList.add("A request was entered for an empty list");
         } else {
             List<Car> listCountCars = firstCountlistCars(listCars, count);
