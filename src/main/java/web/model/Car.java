@@ -1,7 +1,5 @@
 package web.model;
 
-import java.util.ArrayList;
-
 public class Car {
     public String getModel() {
         return model;
