@@ -1,6 +1,15 @@
 package web.model;
 
 public class Car {
+    private String model;
+    private String color;
+    private int power;
+
+    public Car (String model, String color, int power) {
+        this.model = model;
+        this.color = color;
+        this.power = power;
+    }
     public String getModel() {
         return model;
     }
@@ -17,18 +26,11 @@ public class Car {
         this.color = color;
     }
 
-    public int getPower() {
-        return power;
-    }
+    public int getPower() { return power; }
 
     public void setPower(int power) {
         this.power = power;
     }
-
-    private String model;
-    private String color;
-    private int power;
-
     @Override
     public String toString() {
         return "Car{" +
@@ -36,11 +38,5 @@ public class Car {
                 ", color='" + color + '\'' +
                 ", power=" + power +
                 '}';
-    }
-
-    public Car (String model, String color, int power) {
-        this.model = model;
-        this.color = color;
-        this.power = power;
     }
 }

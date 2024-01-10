@@ -1,13 +1,16 @@
 package web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import web.model.Car;
+import web.service.CarService;
+import web.service.CarServiseImpl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static web.model.CarServiseImpl.firstCountlistCars;
-
 public class Main {
+
+    private CarService carService = new CarServiseImpl();
     public static List<Car> listCars = listCars ();
     public static List<Car> listCars () {
         List<Car> listCars = new ArrayList<>();
@@ -18,12 +21,12 @@ public class Main {
         listCars.add(new Car("Model5", "Color5", 5));
         return listCars;
     }
-    public static List<String> listCarsInString (Integer count) {
+    public List<String> listCarsInString (Integer count) {
         List<String> stringList = new ArrayList<>();
         if (count == null || count <= 0) {
             stringList.add("A request was entered for an empty list");
         } else {
-            List<Car> listCountCars = firstCountlistCars(listCars, count);
+            List<Car> listCountCars = carService.firstCountlistCars(listCars, count);
             for (int i = 0; i < count && i < 5; i++) {
                 stringList.add(listCountCars.get(i).toString());
             }
